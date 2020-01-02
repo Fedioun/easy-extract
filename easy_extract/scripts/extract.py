@@ -37,7 +37,7 @@ class EasyExtract(ArchiveFinder):
             sys.exit('No archives to extract !')
 
     def get_path_archives(self, path, filenames, archive_classes):
-        print 'Scanning %s...' % os.path.abspath(path)
+        print('Scanning %s...' % os.path.abspath(path))
         archives = super(EasyExtract, self).get_path_archives(
             path, filenames, archive_classes)
         return archives
@@ -47,15 +47,15 @@ class EasyExtract(ArchiveFinder):
             if force or len(self.archives) == 1:
                 return True
             for archive in self.archives:
-                print archive
+                print(archive)
 
-            extract = raw_input('%i archives found. Extract all ? '
+            extract =input('%i archives found. Extract all ? '
                                 '[Y]es / No / Select : ' % len(self.archives))
             if not extract or 'y' in extract.lower():
                 return True
             if 's' in extract.lower():
                 for archive in self.archives:
-                    extract = raw_input(
+                    extract = input(
                         'Extract %s ? [Y]es / No / All / Quit : ' % archive)
                     extract = extract.lower()
                     if extract:
@@ -110,7 +110,7 @@ def cmdline():
     if len(args):
         directories = args
 
-    print '--** Easy Extract v%s **--' % __version__
+    print('--** Easy Extract v%s **--' % __version__)
     EasyExtract(directories, options.recursive,
                 options.force_extract, options.repair,
                 options.repair_only, options.clean)

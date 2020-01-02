@@ -1,4 +1,4 @@
-Easy-extract
+Easy-extract for Python3
 ============
 
 .. contents::

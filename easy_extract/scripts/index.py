@@ -18,7 +18,7 @@ class EasyIndex(ArchiveFinder):
             sys.exit('No medias to index !')
 
     def get_path_archives(self, path, filenames, archive_classes):
-        print 'Scanning %s...' % os.path.abspath(path)
+        print('Scanning %s...' % os.path.abspath(path))
         archives = super(EasyIndex, self).get_path_archives(
             path, filenames, archive_classes)
         return archives
@@ -29,7 +29,7 @@ class EasyIndex(ArchiveFinder):
 
     def index_medias(self):
         for archive in self.archives:
-            print 'Indexing %s' % archive.archives[0]
+            print('Indexing %s' % archive.archives[0])
             archive.extract()
 
 
@@ -46,5 +46,5 @@ def cmdline():
     if len(args):
         directories = args
 
-    print '--** Easy Index v%s **--' % __version__
+    print('--** Easy Index v%s **--' % __version__)
     EasyIndex(directories, options.recursive)

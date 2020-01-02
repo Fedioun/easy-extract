@@ -7,7 +7,7 @@ class ArchiveFinder(object):
     """Find and build the archives contained in path"""
 
     def __init__(self, paths=['.'], recursive=True, archive_classes=[]):
-        if isinstance(paths, basestring):
+        if isinstance(paths, str):
             paths = [paths]
         self.paths = paths
         self.recursive = recursive
